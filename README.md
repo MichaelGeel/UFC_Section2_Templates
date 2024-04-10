@@ -4,8 +4,13 @@ The Ultimate Flask Course by Anthony Herbert.
 This is Section 2 of The Ultimate Flask Course.
 
 It covers the usage of templates in Flask including:
--
--
+-Intro to Templates
+-Template Variables
+-Conditionals
+-Loops
+-Static Files
+-Inheritance
+-Include
 
 Note that what's listed above is merely the titles of the various lessons contained within this section intended to provide a brief overview of what's been covered in the section.
 
