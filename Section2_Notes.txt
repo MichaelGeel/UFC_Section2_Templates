@@ -38,3 +38,19 @@ route return that calls render_template, you pass the variable along there with 
 
 ## 18) Conditionals:
 
+So we've seen now that variables are one thing you can add in the template.
+Another thing that can be added to templates are conditional statements, so "if" statements.
+So in the home route render_template we'll pass in a boolean for the sake of demonstration.
+    "render_template(..., display=True)"
+Now we'll add an if statement into the home.html template, and to do that, we need to encompass the the if statement in {% %}
+After that we can insert the code we'd want to run if the conditions are met, and then after that we include an {% endif %} to 
+signify the end of the if statement code.
+Note that the only python code in this is in the actual if statement line, not counting the endif, within the if sits html statements again.
+This may be expanded upon later on however.
+Now when we run the home route, because the if condition is true we'll see the h2 header we included as well in the if statement code.
+We can also add an else into the statement by including an "{% else %}" line between the if and endif lines.
+Note that Jinja is just placed around the html, most of the template should be HTML, and then when you need to add some logic, 
+you use either the {{}} or {% %} to tell the interpreter that you are trying to add some kind of logic or variable to execute.
+
+## 19) Loops:
+

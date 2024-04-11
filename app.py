@@ -34,7 +34,8 @@ def home(name):
         # Adding name to the session dictionary.
         session['name'] = name
         # Refactoring the return to use the home.html template instead and feeding it the name variable.
-        return render_template('home.html', name=name)
+        # Adding a boolean variable to pass for demonstrating conditional statements inside a template.
+        return render_template('home.html', name=name, display=True)
 
 # Creating a route to return a jsonified version of python data structures.
 @app.route('/json')
