@@ -33,7 +33,8 @@ def index(): # name):
 def home(name):
         # Adding name to the session dictionary.
         session['name'] = name
-        return '<h1>Hello {}, you are on the home page!</h1>'.format(name)
+        # Refactoring the return to use the home.html template instead and feeding it the name variable.
+        return render_template('home.html', name=name)
 
 # Creating a route to return a jsonified version of python data structures.
 @app.route('/json')
@@ -64,6 +65,7 @@ def theform():
         # Reverting to original formatting for the GET POST route split.
         #if request.method == "GET":
                 # Creating the form and the relevant inputs to be filled in in the form alongside the submit.
+        # Porting the html to the form.html file and calling that file in the return here.
         return render_template('form.html')
 #Commenting out the else for historic formatting evidence.
 #        else:

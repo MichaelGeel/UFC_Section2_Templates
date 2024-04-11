@@ -19,3 +19,22 @@ We'll also add some formatting just to make the html more valid and correct.
 
 ## 17) Template Variables:
 
+Using templates goes much deeper than just allowing you to keep your html neatly in a separate location.
+So we'll now look at how to use templates with variables inside of them.
+So we'll start out by modifying the home route to return a template called "home.html" instead of the html line.
+Naturally this means we need to create that file as well.
+We'll also move over the return html code over to the template as well, but removing the placeholder as we can't use .format in html.
+Now what we want to do is pass in a variable to the template, and to do that, you pass in extra arguments to render_template:
+    "render_template('home.html', name=name)"
+Now to use that variable inside the html template, we need to refer to it using "{{ }}"
+    "{{ name }}"
+So in Jinja the base of the code is HTML, and then whenever you want to have something dynamic (e.g. injecting some code)
+you use some sort of brackets to specify that this is now code that needs to be executed.
+Now in the case of what we put into the brackets, it's telling the interpreter that the variable 'name' needs to be replaced header
+then it'll be readable in the HTML.
+So running a test at first name will be default but if we feed it a name in the URL it'll pass that name through as it did previously.
+In summary whenever you need to pass a variable to a template, you reference it in the html file with {{ }} and then in the 
+route return that calls render_template, you pass the variable along there with the file name being rendered.
+
+## 18) Conditionals:
+
