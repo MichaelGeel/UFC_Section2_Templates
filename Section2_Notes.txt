@@ -1,0 +1,21 @@
+# Section 2: Templates
+
+## 16) Intro to Templates:
+
+We're going to start by porting over the app.py file from section 1, as we'll be expanding off of that work in this section.
+We'll revisit the /theform route and currently, all we've been doing is returning html directly as a string.
+Now this method works, but if we wanted to return a large amount of HTML, this wouldn't be very practical.
+Now in flask we have what is called templates and there's a template engine called Jinja that runs these templates.
+So to use these templates, we're going to first import render_template from flask.
+Then we'll create a folder in our working directory called "templates", and this folder will house all our html templates
+and it's also where flask knows to look for our templates.
+Within this templates folder we'll create a plain HTML file called "form.html" and we'll then take the HTML from the return
+statement in /theform and move it over to the HTML document.
+Then instead of returning the html directly, we'll use render_template and return the form.html file.
+    "render_template('form.html')"
+So if we run the app now, we'll get the same result in the browser, but this is a different way of achieving said result.
+If we want proof that it works, in the form.html file, above everythign else we'll add h1 tags and create a header that will reflect during runtime.
+We'll also add some formatting just to make the html more valid and correct.
+
+## 17) Template Variables:
+
