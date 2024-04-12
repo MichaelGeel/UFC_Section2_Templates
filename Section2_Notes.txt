@@ -73,3 +73,21 @@ NOTE: When referencing a key in a dict as a var in the html file, you can do it 
 
 ## 20) Static Files:
 
+A common thing that you'll have to do inside of a template is to access static files.
+A static file is an image or Javascript or CSS file.
+You want to be able to access these inside of the template because there's no way to get the file directly when the 
+web server is running because the directory won't be exactly what you're looking for.
+To do this, you'll have to use a special function called "url_for" which is very similar to the one we learnt to use in the flask app for redirecting.
+To start off, we have to create a folder named "static" in our working directory.
+Then within static we'll create another folder that'll house our images, which we'll save an image provided in the course to.
+Then below the second for loop we'll add an image tag and scr attribute but leave that empty for now.
+Inside of it, we need to put the location of the image, and to do this, we'll use the following code:
+    "<img src=" url_for('static', filename='images/prettyprinted.png')"
+So re-iterating we can see now that the url_for function works similarly in that we provide it a directory to look in for the file and then the file name
+to look for.
+As we can see it can navigate through multiple directory layers so long as we make sure to indicate exactly how to navigate to where the file is,
+however, we specify the main folder to look in within the working directory and any subfolders have to be included in the filename.
+Once again this applies for any form of static file which will more commonly be Javascript and CSS files.
+
+## 21) Inheritance:
+
