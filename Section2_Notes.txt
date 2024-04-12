@@ -91,3 +91,38 @@ Once again this applies for any form of static file which will more commonly be 
 
 ## 21) Inheritance:
 
+We'll lastly look at template inheritance to have a base tempalte and child templates to fill in the base template.
+On pretty much any website, most pages will have a similar foundation with the only difference being the content of the page.
+So instead of constantly rewriting the base of that temlpate over and over again, you can create one simple file that is the base and then all the child templates will
+inherit from that base and fill in the content with the unique parts of that particular page.
+To start off we'll create an html file called "base.html" which will naturally act as our base template.
+Then we'll populate this base with the typical html syntax you'd see in every page.
+For the sake of the demonstration we'll put something obvious to show the base of the base, just a bare-bones example.
+Whatever we'll be filling into the base tempalte in the child template will be done in what we know in Jinja as "blocks".
+These blocks act as place holders for the child template to fill in.
+To add a block in the base template is similar to how we'd insert an if statement or for loop into a template.
+In the base template, we insert the following code wherever we want a placeholder:
+    "{% block title %}{% endblock %}"
+    where "title" is the unique name we're assigning to a block so we can reference the block code with replace from the child tempalte.
+Now in our child templates, we're going to inherit from the base template.
+At the very top of the child template, we add the following to indicate the inheritance:
+    "{% extends 'base.html' %}"
+Now if we were to save and do a test run of the app, when we load up on of the routes that uses a child template, all we'd see is 
+"Base Template" which is the only text added in the base template.
+This is because in the child template we need any html code we add there to be taking the place of a block from the base template.
+So in the child template, we'll pick the relevant block to encase the code in for injection into the base template and add it,
+using the exact same syntax as we used to declare the block in the base template.
+Remember anything that comes pre-written in the base template is not needed in the child template if they're performing the same function, 
+for instance if the base has head tags already, you don't need them in the child templates.
+Note that when using blocks, you can put default/placeholder content in the block declaration in the base template, but the code inside 
+a block in the child template will override everything in the parent/base file block unless you use a function called "super"
+To give an example, in the "content" block we created, we'll add another header tag, but if we save and reload the web page, we won't see this header 
+because it's being overridden.
+To display whatever is in the parent block alongside whatever is in the child block, we add the following function:
+    "{{ super() }}"
+And the presence of this line of code as the first line in the base template block, everything in the parent block will then show up alongside whatever you include in 
+the child block as well.
+So what you have in and out of block in your base template comes entirely down to how you're designing your pages.
+
+## 22) Include:
+
