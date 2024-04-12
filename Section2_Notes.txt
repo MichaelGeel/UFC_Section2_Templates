@@ -126,3 +126,14 @@ So what you have in and out of block in your base template comes entirely down t
 
 ## 22) Include:
 
+Another thing that we can do with templates is include one template into another.
+Doing this is simply taking the contents of one template and injecting it into another template.
+We'll create an example file for this called "include_this.html" and put a simple header tag line inside to show the code is actually being injected.
+Then inside one of the child template content blocks, right above the end of the the block, we'll add the following:
+    "{% include "include_this.html" %}"
+And this line will basically take everything from the html file being referenced, and inject it wherever this line was in the file.
+Above just injecting the contents of the included tempalte into the main template, you can also use the variable you have acces to in the main template
+in the included tempalte.
+To showcase this, we'll add another line in the included template that'll use a variable being passed into the main template.
+And the included template will be able to access the variables passed into the main file, naturally just ensure that variable names match up, 
+otherwise this won't work.
