@@ -54,3 +54,22 @@ you use either the {{}} or {% %} to tell the interpreter that you are trying to 
 
 ## 19) Loops:
 
+INDEPENDENT NOTE: Comments in HTML are denoted by: "<!-- Text here -->"
+
+In addition to variables and conditionals, you can also use loops in a template.
+So in the /home route again for the sake of demonstration, we'll pass a list to the template as well.
+    "render_template(..., my_list=['one', 'two', 'three', 'four'])"
+Now in the home.html template, we'll add a for loop.
+NOTE: for loops are also donated by the {% %} like if statements.
+    "{% for x in my_list %}"
+And the for statement will also have an endfor as well:
+    "{% endfor %}"
+Once again, in the for loop itself, most of the code will likely be html that incorporated the variable that's being looped over.
+Remember that if you're referencing the variable in the for loop, for instance, 'x', it has to be done as a variable using the {{ }}
+You can similarly do this with a dictionary as well, so we'll pass a list of dictionaries for the demo.
+
+NOTE: When referencing a key in a dict as a var in the html file, you can do it in one of 2 ways:
+    "x.name" or "x['name']"
+
+## 20) Static Files:
+
